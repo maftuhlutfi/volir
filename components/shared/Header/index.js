@@ -30,8 +30,8 @@ const Header = () => {
     const pathname = useRouter().pathname
 
     return (
-        <header>
-            <div className="w-full flex bg-white items-center justify-between max-w-[1440px] py-10 px-20 fixed top-0">
+        <header className="fixed top-0 z-40 w-full">
+            <div className="flex relative mx-auto bg-white items-center justify-between max-w-[1440px] py-10 px-20">
                 <Link href={'/'}>
                     <a className="relative w-16 h-12">
                         <Image src={'/logo.svg'} layout='fill' className="object-contain object-center" />
