@@ -4,3 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: #2d3748;
+}
