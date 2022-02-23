@@ -18,7 +18,7 @@ const LoginPage = () => {
                 <Card className='w-[420px] max-w-full relative mx-auto'>
                     <div className="mb-8 text-center">
                         <h3 className="mb-4 text-2xl font-bold">Login</h3>
-                        <p className="text-gray-700">Masuk dulu untuk melanjutkan aktivitas baikmu</p>
+                        <p className="text-gray-600">Masuk dulu untuk melanjutkan aktivitas baikmu</p>
                     </div>
                     <form className="mb-8">
                         <div className="mb-8">

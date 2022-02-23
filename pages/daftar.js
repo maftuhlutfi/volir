@@ -18,7 +18,7 @@ const LoginPage = () => {
                 <Card className='w-[420px] max-w-full relative mx-auto'>
                     <div className="mb-8 text-center">
                         <h3 className="mb-4 text-2xl font-bold">Daftar</h3>
-                        <p className="text-gray-700">Yuk daftar untuk ikut kegiatan dan melakukan banyak kebaikan lain.</p>
+                        <p className="text-gray-600">Yuk daftar untuk ikut kegiatan dan melakukan banyak kebaikan lain.</p>
                     </div>
                     <form className="mb-8">
                         <div className="mb-8">
@@ -30,7 +30,7 @@ const LoginPage = () => {
                     </form>
                     <div className="mb-8 text-center">
                         Sudah punya akun?
-                        <Link href='/daftar'>
+                        <Link href='/login'>
                             <a className="font-bold text-primary"> Masuk </a>
                         </Link>
                         atau
