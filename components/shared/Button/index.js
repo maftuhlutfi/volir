@@ -3,7 +3,8 @@ const Button = ({ className, label, icon, type, size, full, ...otherProps }) => 
         primary: 'bg-primary text-white',
         secondary: 'bg-secondary',
         accent: 'bg-white text-gray-800 border border-gray-400 shadow',
-        danger: 'bg-red-500 text-white'
+        danger: 'bg-red-500 text-white',
+        blue: 'bg-blue-500 text-white'
     }
 
     const sizeStyle = {
@@ -20,7 +21,7 @@ const Button = ({ className, label, icon, type, size, full, ...otherProps }) => 
 
     return (
         <button className={`flex items-center justify-center font-bold ${typeStyle[type]} ${size ? sizeStyle[size] : sizeStyle['base']} ${full ? 'w-full' : ''} ${className ? className : ''}`} {...otherProps}>
-            {icon && <i className={`${icon} ${size ? iconStyle[size] : iconStyle['base']} mr-2`} />}
+            {icon && <i className={`${icon} ${size ? iconStyle[size] : iconStyle['base']} ${label ? 'mr-2' : ''}`} />}
             {label}
         </button>
     );

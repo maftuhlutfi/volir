@@ -5,7 +5,7 @@ import Stats from "../../components/Admin/Dashboard/Stats";
 import CustomHead from "../../components/shared/CustomHead";
 import DashboardSubTitle from "../../components/shared/Dashboard/DashboardSubTitle";
 import DashboardTitle from "../../components/shared/Dashboard/DashboardTitle";
-import AdminLayout from "../../layout/MainLayout/AdminLayout";
+import AdminLayout from "../../layout/AdminLayout";
 
 const AdminPage = () => {
     return (

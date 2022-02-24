@@ -1,8 +1,8 @@
 import React from "react";
-import MainLayout from "..";
-import Card from "../../../components/shared/Card";
-import DashboardMenu from "../../../components/shared/Dashboard/DashboardMenu";
-import ProfileCard from "../../../components/shared/ProfileCard";
+import MainLayout from "../MainLayout";
+import Card from "../../components/shared/Card";
+import DashboardMenu from "../../components/shared/Dashboard/DashboardMenu";
+import ProfileCard from "../../components/shared/ProfileCard";
 
 const menuList = [
     {
