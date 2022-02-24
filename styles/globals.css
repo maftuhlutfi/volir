@@ -3,3 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table-new-user th,
+.table-new-user td {
+  padding: 0px 10px;
+}
+
+.table-new-user td {
+  padding-top: 20px;
+}

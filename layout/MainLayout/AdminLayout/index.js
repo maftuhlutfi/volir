@@ -1,3 +1,4 @@
+import React from "react";
 import MainLayout from "..";
 import Card from "../../../components/shared/Card";
 import DashboardMenu from "../../../components/shared/Dashboard/DashboardMenu";
@@ -16,7 +17,7 @@ const menuList = [
     },
     {
         title: 'Kelola Pengguna',
-        icon: 'icon-user',
+        icon: 'icon-users',
         href: '/admin/kelola-pengguna'
     },
     {
@@ -29,12 +30,12 @@ const menuList = [
 const AdminLayout = ({ children }) => {
     return (
         <MainLayout>
-            <div className="flex w-full items-start">
+            <div className="flex items-start w-full">
                 <div className="w-[305px] flex-shrink-0 mr-8">
                     <ProfileCard />
                     <DashboardMenu menuList={menuList} />
                 </div>
-                <Card className='p-5 w-full'>
+                <Card className='grid w-full gap-8 p-5'>
                     {children}
                 </Card>
             </div>
