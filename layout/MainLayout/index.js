@@ -5,7 +5,7 @@ const MainLayout = ({ children }) => {
     return (
         <>
             <Header />
-            <div className="max-w-[1400px] min-h-screen mt-40 mb-10 mx-20">
+            <div className="max-w-[1400px] relative mx-auto min-h-screen mt-40 mb-10 px-20">
                 {children}
             </div>
             <Footer />

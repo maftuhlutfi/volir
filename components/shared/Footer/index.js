@@ -19,7 +19,7 @@ const socialLinks = [
 const Footer = () => {
     return (
         <footer className="text-white bg-dark-green">
-            <div className="w-full flex flex-col items-center max-w-[1440px] py-6 px-20">
+            <div className="w-full flex flex-col items-center max-w-[1440px]relative mx-auto py-6 px-20">
                 <Link href={'/'}>
                     <a className="relative w-16 h-12">
                         <Image src={'/logo-white.svg'} layout='fill' className="object-contain object-center" />

@@ -1,5 +1,7 @@
 import CustomHead from "../../components/shared/CustomHead";
+import DashboardTitle from "../../components/shared/Dashboard/DashboardTitle";
 import MainLayout from "../../layout/MainLayout";
+import AdminLayout from "../../layout/MainLayout/AdminLayout";
 
 const AdminPage = () => {
     return (
@@ -8,9 +10,9 @@ const AdminPage = () => {
                 title='Dashboard Admin'
                 description='Admin dashboard aplikasi volir'
             />
-            <MainLayout>
-                asd
-            </MainLayout>
+            <AdminLayout>
+                <DashboardTitle title='Halo, Admin' />
+            </AdminLayout>
         </>
     );
 }

@@ -11,7 +11,11 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <div className='text-gray-800'>
+      <Component {...pageProps} />
+    </div>
+  )
 }
 
 export default MyApp
