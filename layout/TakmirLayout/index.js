@@ -3,31 +3,37 @@ import MainLayout from "../MainLayout";
 import Card from "../../components/shared/Card";
 import DashboardMenu from "../../components/shared/Dashboard/DashboardMenu";
 import ProfileCard from "../../components/shared/ProfileCard";
+import MasjidProfileCard from "../../components/Takmir/MasjidProfileCard";
 
 const menuList = [
     {
-        title: 'Dashboard',
-        icon: 'icon-dashboard',
-        href: '/admin'
+        title: 'Kegiatan',
+        icon: 'icon-calendar',
+        href: '/takmir/kelola-kegiatan'
     },
     {
-        title: 'Kelola Masjid',
-        icon: 'icon-mosque',
-        href: '/admin/kelola-masjid'
+        title: 'Lowongan',
+        icon: 'icon-briefcase',
+        href: '/takmir/kelola-lowongan'
     },
     {
-        title: 'Kelola Pengguna',
+        title: 'Literasi',
+        icon: 'icon-book',
+        href: '/takmir/kelola-literasi'
+    },
+    {
+        title: 'Takmir',
         icon: 'icon-users',
-        href: '/admin/kelola-pengguna'
+        href: '/takmir/daftar-takmir'
     }
 ]
 
-const AdminLayout = ({ children }) => {
+const TakmirLayout = ({ children }) => {
     return (
         <MainLayout>
             <div className="flex items-start w-full">
                 <div className="w-[305px] flex-shrink-0 mr-8">
-                    <ProfileCard />
+                    <MasjidProfileCard />
                     <DashboardMenu menuList={menuList} />
                 </div>
                 <Card className='grid w-full gap-8 p-5'>
@@ -38,4 +44,4 @@ const AdminLayout = ({ children }) => {
     );
 }
 
-export default AdminLayout;
+export default TakmirLayout;
