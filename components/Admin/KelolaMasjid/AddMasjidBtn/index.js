@@ -1,8 +1,8 @@
 import Button from "../../../shared/Button";
 
-const AddMasjidBtn = () => {
+const AddMasjidBtn = ({ ...otherProps }) => {
     return (
-        <Button type='primary' size='sm' icon='icon-plus' label='Tambah Masjid' />
+        <Button type='primary' size='sm' icon='icon-plus' label='Tambah Masjid' {...otherProps} />
     );
 }
 

@@ -9,6 +9,7 @@ import AdminLayout from "../../layout/AdminLayout";
 
 const KelolaMasjidPage = () => {
     const [showModal, setShowModal] = useState(false)
+    const [masjidData, setMasjidData] = useState(null)
 
     return (
         <>
@@ -17,7 +18,7 @@ const KelolaMasjidPage = () => {
                 description='Admin kelola masjid'
             />
             <AdminLayout>
-                <DashboardTitle title='Kelola Masjid' button={<AddMasjidBtn />} />
+                <DashboardTitle title='Kelola Masjid' button={<AddMasjidBtn onClick={() => setShowModal(true)} />} />
                 <MasjidTable />
             </AdminLayout>
             <AddEditMasjidModal show={showModal} onClose={() => setShowModal(false)} />

@@ -16,7 +16,7 @@ const initInput = {
     image: null
 }
 
-const AddEditMasjidModal = ({ show, onClose }) => {
+const AddEditMasjidModal = ({ show, onClose, masjidData }) => {
     const [input, setInput] = useState(initInput)
 
     const { name, description, address, coordinates, link, image } = input
