@@ -13,16 +13,15 @@ const KelolaMasjidPage = () => {
     return (
         <>
             <CustomHead
-                title='Dashboard Admin'
-                description='Admin dashboard aplikasi volir'
+                title='Admin - Kelola Masjid'
+                description='Admin kelola masjid'
             />
             <AdminLayout>
                 <DashboardTitle title='Kelola Masjid' button={<AddMasjidBtn />} />
                 <MasjidTable />
-                <p onClick={() => setShowModal(true)}>Click</p>
             </AdminLayout>
             <AddEditMasjidModal show={showModal} onClose={() => setShowModal(false)} />
-            <ConfirmModal show={true} text='Hapus Masjid Blabla' />
+            <ConfirmModal show={false} text='Hapus Masjid Blabla' />
         </>
     );
 }
