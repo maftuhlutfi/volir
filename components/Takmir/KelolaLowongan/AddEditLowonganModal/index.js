@@ -1,9 +1,6 @@
 import { useState } from "react";
 import mapFormField from "../../../../utils/mapFormField";
 import Button from "../../../shared/Button";
-import ImageInput from "../../../shared/Input/ImageInput";
-import TextArea from "../../../shared/Input/TextArea";
-import TextField from "../../../shared/Input/TextField";
 import Modal from "../../../shared/Modal";
 import ModalFooter from "../../../shared/Modal/ModalFooter";
 import ModalTitle from "../../../shared/Modal/ModalTitle";
@@ -11,7 +8,7 @@ import formFields from "./formFields";
 
 const initInput = formFields.reduce((acc, curr) => (acc[curr.name] = curr.value, acc), {})
 
-const AddEditKegiatanModal = ({ show, onClose, kegiatanData }) => {
+const AddEditLowonganModal = ({ show, onClose, kegiatanData }) => {
     const [input, setInput] = useState(initInput)
 
     const handleChange = e => {
@@ -28,9 +25,11 @@ const AddEditKegiatanModal = ({ show, onClose, kegiatanData }) => {
         setInput(initInput)
     }
 
+    console.log(input)
+
     return (
         <Modal show={show} onClose={onClose}>
-            <ModalTitle title='Tambah Kegiatan' />
+            <ModalTitle title='Tambah Lowongan' />
             <form className="grid gap-5">
                 {mapFormField(formFields, input, handleChange)}
                 <ModalFooter>
@@ -44,4 +43,4 @@ const AddEditKegiatanModal = ({ show, onClose, kegiatanData }) => {
     );
 }
 
-export default AddEditKegiatanModal;
+export default AddEditLowonganModal;

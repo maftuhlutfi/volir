@@ -1,3 +1,4 @@
+import { useState } from "react"
 import CustomHead from "../../components/shared/CustomHead"
 import DashboardTitle from "../../components/shared/Dashboard/DashboardTitle"
 import AddEditKegiatanModal from "../../components/Takmir/KelolaKegiatan/AddEditKegiatanModal"
@@ -6,16 +7,19 @@ import KegiatanTable from "../../components/Takmir/KelolaKegiatan/KegiatanTable"
 import TakmirLayout from "../../layout/TakmirLayout"
 
 const TakmirPage = () => {
+    const [showModal, setShowModal] = useState(false)
+    const [masjidData, setMasjidData] = useState(null)
+
     return (
         <>
             <CustomHead
-                title='Takmir - Dashboard'
-                description='Dashboard takmir masjid'
+                title='Takmir - Kegiatan'
+                description='Kegiatan takmir masjid'
             />
             <TakmirLayout>
-                <DashboardTitle title='Kelola Kegiatan' button={<AddKegiatanBtn />} />
+                <DashboardTitle title='Kelola Kegiatan' button={<AddKegiatanBtn onClick={() => setShowModal(true)} />} />
                 <KegiatanTable />
-                <AddEditKegiatanModal show={true} />
+                <AddEditKegiatanModal show={showModal} onClose={() => setShowModal(false)} />
             </TakmirLayout>
         </>
     )
