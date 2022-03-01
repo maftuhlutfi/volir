@@ -6,7 +6,7 @@ import AddKegiatanBtn from "../../components/Takmir/KelolaKegiatan/AddKegiatanBt
 import KegiatanTable from "../../components/Takmir/KelolaKegiatan/KegiatanTable"
 import TakmirLayout from "../../layout/TakmirLayout"
 
-const TakmirPage = () => {
+const KelolaKegiatanPage = () => {
     const [showModal, setShowModal] = useState(false)
     const [masjidData, setMasjidData] = useState(null)
 
@@ -25,4 +25,4 @@ const TakmirPage = () => {
     )
 }
 
-export default TakmirPage
+export default KelolaKegiatanPage

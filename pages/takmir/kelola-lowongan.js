@@ -7,7 +7,7 @@ import AddLowonganBtn from "../../components/Takmir/KelolaLowongan/AddLowonganBt
 import LowonganTable from "../../components/Takmir/KelolaLowongan/LowonganTable"
 import TakmirLayout from "../../layout/TakmirLayout"
 
-const TakmirPage = () => {
+const KelolaLowonganPage = () => {
     const [showModal, setShowModal] = useState(false)
     const [masjidData, setMasjidData] = useState(null)
 
@@ -27,4 +27,4 @@ const TakmirPage = () => {
     )
 }
 
-export default TakmirPage
+export default KelolaLowonganPage
