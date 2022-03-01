@@ -12,3 +12,11 @@
 .table-new-user td {
   padding-top: 20px;
 }
+
+.form-with-rich-text > * {
+  margin-bottom: 20px;
+}
+
+.my-editing-area {
+  min-height: 180px;
+}

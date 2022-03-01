@@ -3,6 +3,7 @@ import ImageInput from "../components/shared/Input/ImageInput";
 import Select from "../components/shared/Input/Select";
 import TextArea from "../components/shared/Input/TextArea";
 import TextField from "../components/shared/Input/TextField";
+import RichText from "../components/shared/Input/RichText";
 
 const mapFormField = (formFields, input, handleChange) => {
     return (
@@ -27,6 +28,8 @@ const mapFormField = (formFields, input, handleChange) => {
                         return <ImageInput key={i} id={f.name} name={f.name} label={f.label} image={input[f.name]} onChange={handleChange} />
                     case 'date-range':
                         return <DateRangeInput key={i} id={f.name} {...f} onChange={handleChange} value={input[f.name]} />
+                    case 'rich-text':
+                        return <RichText key={i} id={f.name} {...f} onChange={handleChange} value={input[f.name]} />
                     default:
                         return <TextField key={i} id={f.name} {...f} onChange={handleChange} value={input[f.name]} />
                 }
