@@ -1,4 +1,6 @@
-const Button = ({ className, label, icon, type, size, full, ...otherProps }) => {
+import Spinner from "../Spinner";
+
+const Button = ({ className, label, icon, type, size, full, loading, ...otherProps }) => {
     const typeStyle = {
         primary: 'bg-primary text-white',
         secondary: 'bg-secondary',
@@ -20,9 +22,15 @@ const Button = ({ className, label, icon, type, size, full, ...otherProps }) => 
     }
 
     return (
-        <button className={`flex items-center justify-center font-bold ${typeStyle[type]} ${size ? sizeStyle[size] : sizeStyle['base']} ${full ? 'w-full' : ''} ${className ? className : ''}`} {...otherProps}>
+        <button className={`relative flex items-center min-h-[56px] justify-center font-bold ${typeStyle[type]} ${size ? sizeStyle[size] : sizeStyle['base']} ${full ? 'w-full' : ''} ${className ? className : ''}`} {...otherProps}>
             {icon && <i className={`${icon} ${size ? iconStyle[size] : iconStyle['base']} ${label ? 'mr-2' : ''}`} />}
-            {label}
+            {loading ?
+                <>
+                    <Spinner />
+                </>
+                :
+                label
+            }
         </button>
     );
 }
