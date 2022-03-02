@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAuth } from "../../../context/AuthUserContext";
 import Button from '../Button'
+import ProfilMenu from "./ProfilMenu";
 
 const menu = [
     {
@@ -28,6 +30,7 @@ const menu = [
 
 const Header = () => {
     const pathname = useRouter().pathname
+    const { authUser } = useAuth()
 
     return (
         <header className="fixed top-0 z-40 w-full">
@@ -47,11 +50,15 @@ const Header = () => {
                     )}
                 </div>
                 <div className="flex items-center">
-                    <Link href={'/login'}>
-                        <a>
-                            <Button type='primary' label='Login' />
-                        </a>
-                    </Link>
+                    {authUser ?
+                        <ProfilMenu />
+                        :
+                        <Link href={'/login'}>
+                            <a>
+                                <Button type='primary' label='Login' />
+                            </a>
+                        </Link>
+                    }
                 </div>
             </div>
         </header>
