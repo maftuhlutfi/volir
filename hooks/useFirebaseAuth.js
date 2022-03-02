@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/clientApp";
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { getUserData } from "../firebase/utils";
+import { signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserData, getUserData } from "../firebase/utils";
 
 const useFirebaseAuth = () => {
     const [authUser, setAuthUser] = useState(null)
@@ -21,8 +21,23 @@ const useFirebaseAuth = () => {
 
         setLoading(true)
 
+        console.log(authState)
+
         getUserData(authState, data => {
-            setAuthUser(data)
+            if (data) {
+                setAuthUser(data)
+            } else {
+                const userData = {
+                    name: authState.displayName | '',
+                    email: authState.email,
+                    photo: authState.photoURL | '',
+                    role: 'user'
+                }
+
+                createUserData(authState.uid, userData, res => {
+                    console.log(res)
+                })
+            }
             setLoading(false)
         })
     }
@@ -36,6 +51,7 @@ const useFirebaseAuth = () => {
         authUser,
         loading,
         signInWithEmailAndPassword: (email, password) => signInWithEmailAndPassword(auth, email, password),
+        createUserWithEmailAndPassword: (email, password) => createUserWithEmailAndPassword(auth, email, password),
         signOut: () => signOut(auth).then(clear)
     };
 }

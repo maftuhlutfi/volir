@@ -11,6 +11,7 @@ import MainLayout from "../layout/MainLayout";
 import { useAuth } from "../context/AuthUserContext";
 import NotAuthenticatedPage from "../components/HOC/NotAuthenticatedPage";
 import Message from "../components/shared/Message";
+import formatErrorMessage from "../utils/formatErrorMessage";
 
 const LoginPage = () => {
     const router = useRouter()
@@ -48,7 +49,7 @@ const LoginPage = () => {
             .catch(err => {
                 setMessage({
                     type: 'error',
-                    message: err.message.split('/')[1].split('-').join(' ').replace(').', '')
+                    message: formatErrorMessage(err.message)
                 })
             })
     }

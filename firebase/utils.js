@@ -13,3 +13,12 @@ export const getUserData = async (authUser, cb) => {
         await cb(docSnap.data())
     }
 }
+
+export const createUserData = async (uid, data, cb) => {
+    const docRef = doc(db, `/users/${uid}`)
+    const docSnap = await getDoc(docRef)
+
+    if (!docSnap.exists()) {
+        setDoc(docRef, data).then(res => cb(res))
+    }
+}
