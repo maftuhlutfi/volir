@@ -10,6 +10,7 @@ import TextField from "../components/shared/Input/TextField";
 import MainLayout from "../layout/MainLayout";
 import { useAuth } from "../context/AuthUserContext";
 import NotAuthenticatedPage from "../components/HOC/NotAuthenticatedPage";
+import Message from "../components/shared/Message";
 
 const LoginPage = () => {
     const router = useRouter()
@@ -18,7 +19,7 @@ const LoginPage = () => {
         password: 'volir2022'
     })
     const { email, password } = input
-    const [errMsg, setErrMsg] = useState('')
+    const [message, setMessage] = useState(null)
 
     const { signInWithEmailAndPassword, authUser, loading } = useAuth()
 
@@ -29,20 +30,26 @@ const LoginPage = () => {
             ...prev,
             [name]: value
         }))
-        setErrMsg('')
+        setMessage(null)
     }
 
     const handleSubmit = e => {
         e.preventDefault()
         signInWithEmailAndPassword(email, password)
             .then(() => {
-                if (authUser.role == 'admin') {
-                    router.push('/admin')
-                    return
+                setMessage({
+                    type: 'success',
+                    message: 'Yeayy! Login berhasil'
+                })
+                if (authUser && authUser.role == 'admin') {
+                    return router.push('/admin')
                 }
             })
             .catch(err => {
-                setErrMsg(err.message.split('/')[1].split('-').join(' ').replace(').', ''))
+                setMessage({
+                    type: 'error',
+                    message: err.message.split('/')[1].split('-').join(' ').replace(').', '')
+                })
             })
     }
 
@@ -76,6 +83,7 @@ const LoginPage = () => {
                     <LoginWithButton type='facebook' />
                 </Card>
             </MainLayout>
+            {message && <Message {...message} />}
         </>
     );
 }
