@@ -34,7 +34,7 @@ const Header = () => {
             <div className="flex relative mx-auto bg-white items-center justify-between max-w-[1440px] py-10 px-20">
                 <Link href={'/'}>
                     <a className="relative w-16 h-12">
-                        <Image src={'/logo.svg'} layout='fill' className="object-contain object-center" />
+                        <Image src={'/logo.svg'} priority layout='fill' className="object-contain object-center" />
                     </a>
                 </Link>
                 <div className="flex items-center text-sm">
